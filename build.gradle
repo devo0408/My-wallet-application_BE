@@ -1,22 +1,28 @@
 plugins {
+	id 'java'
 	id 'org.springframework.boot' version '2.6.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
+	id "org.flywaydb.flyway" version "8.2.1"
 }
 
-group = 'com.devo.example'
+group = 'com.devo.mywallet'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
+	implementation('org.projectlombok:lombok')
 
-test {
-	useJUnitPlatform()
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation('javax.xml.bind:jaxb-api')
+
+	implementation(group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '3.0.2') // by some reason we need version for downloading dependency
+	implementation('com.sun.xml.bind:jaxb-core')
+
+	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+	implementation(group: 'org.postgresql', name: 'postgresql', version: '42.3.1')
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
