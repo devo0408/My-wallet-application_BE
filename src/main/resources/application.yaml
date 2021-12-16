@@ -5,6 +5,4 @@ spring:
     password: qawsedrf
     driver-class-name: org.postgresql.Driver
 
-#  flyway:
-#    user: mywalletuser
-#    password: qawsedrf
+

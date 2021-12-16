@@ -15,14 +15,16 @@ repositories {
 dependencies {
 	implementation('org.projectlombok:lombok')
 
+	// Web dependencies
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation('javax.xml.bind:jaxb-api')
-
 	implementation(group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '3.0.2') // by some reason we need version for downloading dependency
 	implementation('com.sun.xml.bind:jaxb-core')
 
+	// Add JPA and MySQl dependencies
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation(group: 'org.postgresql', name: 'postgresql', version: '42.3.1')
+	implementation (group: 'org.flywaydb', name: 'flyway-core', version: '8.2.2')
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
